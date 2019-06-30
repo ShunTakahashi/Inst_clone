@@ -7,8 +7,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
+  <header>
+    <ul>
+      <li class="li_top"><%= link_to image_tag('top.png',size: '40x40'),'#' %></li>
+      <li class="li_end"><%= link_to image_tag('user.png',size: '40x40'),'#' %></li>
+      <li><%= link_to image_tag('favo.jpeg',size: '40x40'),'#' %></li>
+    </ul>
+  </header>
 
   <body>
+
     <%= yield %>
   </body>
 </html>
