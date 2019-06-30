@@ -1,0 +1,31 @@
+.creat_user_form{
+  float: right;
+  background-color:#FFFFFF;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 60px;
+  margin-top: 80px;
+  margin-right: 8%;
+  border: solid 0.1rem #C0C0C0;
+  text-align: center;
+}
+
+.creat_user_form_title{
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.input_name, .input_email, .input_password,
+.input_re_password,.creat_submit{
+  margin: 10px;
+}
+
+.go_to_loginform{
+  border: solid 0.1rem #C0C0C0;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 500px;
+  background-color: #FFFFFF;
+  text-align: center;
+  float: right;
+}
