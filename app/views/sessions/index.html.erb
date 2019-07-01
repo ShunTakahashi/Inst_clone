@@ -1,0 +1,16 @@
+<div class="session_login">
+  <h1>Inst_Clone</h1>
+  <%= form_with(scope:  :session, url: sessions_path,local: true) do |f| %>
+    <div class="input_email">
+      <%= f.email_field :email,placheolder:"メールアドレス",size: 30 %>
+    </div>
+
+    <div class="input_password">
+      <%= f.password_field :password,pleacheolder: "パスワード",size: 30 %>
+    </div>
+
+    <%= f.submit "ログイン",class: "submit btn btn-success" %>
+
+  <% end %>
+
+</div>
