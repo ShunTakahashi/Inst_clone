@@ -21,11 +21,20 @@ class UsersController < ApplicationController
     @blogs = Blog.all.order(id: "DESC")
   end
 
+  def update
+    if @user.update(user_params)
+      redirect_to users_path,notice: "編集が完了しました"
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name,:email,
                                  :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :profile)
   end
 end
