@@ -6,14 +6,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <header>
-    <ul>
-      <!-- TOP画像は公式よりDL -->
-      <li class="li_top clearfix"><%= link_to image_tag('top.png',size: '40x40'),'#' %></li>
-      <li class="li_end clearfix"><%= link_to image_tag('user.png',size: '40x40'),'#' %></li>
-      <li><%= link_to image_tag('favo.jpeg',size: '40x40'),'#' %></li>
-    </ul>
-  </header>
+  <% if logged_in? %>
+    <header>
+      <ul>
+       <!-- TOP画像は公式よりDL -->
+        <li class="li_top clearfix"><%= link_to image_tag('top.png',size: '40x40'),'#' %></li>
+        <li class="li_end clearfix"><%= link_to image_tag('user.png',size: '40x40'),'#' %></li>
+       <li><%= link_to image_tag('favo.jpeg',size: '40x40'),'#' %></li>
+      </ul>
+    </header>
+  <% end %>
 
   <body>
   <div class="container">
@@ -25,8 +27,9 @@
     <%= yield %>
   </div>
   </body>
-
-  <footer>
-    <%= link_to "利用規約とかをリンクさせるところ", '#' %>
-  </footer>
+  <% unless logged_in? %>
+    <footer>
+     <%= link_to "利用規約とかをリンクさせるところ", '#' %>
+    </footer>
+  <% end %>
 </html>
