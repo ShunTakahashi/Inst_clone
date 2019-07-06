@@ -1,0 +1,20 @@
+
+<h1>下記の内容で投稿します。よろしいですか？</h1>
+
+<%= form_with(model: @blog, url: blogs_path , local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+
+  <h2>投稿内容</h2>
+  <p><%= @blog.content %></p>
+  <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+  <br>
+  <%= form.submit  "投稿する。" , class: "submit btn btn-success" %>
+<% end %>
+
+<%= form_with(model: @blog , url: new_blog_path,local: true,method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit '戻る',name: 'back' %>
+<% end %>
+</div>

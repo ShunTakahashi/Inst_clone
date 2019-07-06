@@ -1,0 +1,6 @@
+<div class="blogs_new">
+  <h1>今日何があった？</h1>
+  <%= render 'form' , blog: @blog %>
+
+  <%= link_to "入力内容をリセットする", "/blogs/new", data: {confirm: '本当にリセットしますか?'}  %>
+</div>
