@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>InstClone</title>
+    <%= csrf_meta_tags %>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+
   </head>
   <% if logged_in? %>
     <header>
       <ul>
        <!-- TOP画像は公式よりDL -->
-        <li class="li_top clearfix"><%= link_to image_tag('top.png',size: '40x40'),'#' %></li>
-        <li class="li_end clearfix"><%= link_to image_tag('user.png',size: '40x40'),'#' %></li>
-       <li><%= link_to image_tag('favo.jpeg',size: '40x40'),'#' %></li>
+        <li class="li_top"><%= link_to image_tag('top.png',size: '40x40'), blogs_path %></li>
+        <li class="li_end"><%= link_to image_tag('user.png',size: '40x40'), user_path(current_user.id) %></li>
+        <li><%= link_to image_tag('favo.jpeg',size: '40x40'),'#' %></li>
+        <li><%= link_to image_tag('blog.jpeg',size: '40x40'),new_blog_path %></li>
       </ul>
     </header>
   <% end %>

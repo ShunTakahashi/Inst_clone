@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+
+  before_action :set_blog,only:[:edit,:update,:show,:destroy]
+
   def index
     @blogs = Blog.all.order(id: "DESC")
   end
@@ -46,7 +49,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:content,:image,:image_cache)
+    params.require(:blog).permit(:content,:image,:image_cache,:remove_img)
   end
 
   def set_blog

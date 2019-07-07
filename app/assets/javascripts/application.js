@@ -16,3 +16,33 @@
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
+
+
+$(function() {
+  var $textarea = $('#textarea');
+  var lineHeight = parseInt($textarea.css('lineHeight'));
+  $textarea.on('input', function(e) {
+    var lines = ($(this).val() + '\n').match(/\n/g).length;
+    $(this).height(lineHeight * lines);
+  });
+});
+
+
+$( document ).on('turbolinks:load', function() {
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#avatar_img_prev').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#post_img").change(function(){
+    $('#avatar_img_prev').removeClass('hidden');
+    $('.avatar_present_img').remove();
+    readURL(this);
+  });
+});
