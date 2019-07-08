@@ -4,9 +4,9 @@
   <% @blogs.each do |blog| %>
 
     <tr>
-      <th class="show_td"><%= blog.content %></th>
 
       <td class="show_td">User:<%= blog.user.name %></td>
+      <%= image_tag blog.image.url %>
 
       <td class="show_td"><%= link_to '詳細', blog_path(blog.id),
                                       class: "btn btn-primary" %></td>
