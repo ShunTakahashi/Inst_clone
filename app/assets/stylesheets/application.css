@@ -36,7 +36,7 @@ body {
 }
 
 
-header {
+.header {
   height: 75px;
   background-color: white;
   width: 100%;

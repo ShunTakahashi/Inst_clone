@@ -1,0 +1,27 @@
+.index_container{
+  margin: 40px auto 40px auto;
+  width: 602px;
+  min-height: 900px;
+  background-color: white;
+  border: 0.1rem solid grey;
+}
+
+.index_header{
+  border-bottom: 0.1rem solid grey;
+  height: 60px;
+  font-size: 2rem;
+  text-align: left;
+  padding: 16px;
+  margin: auto;
+  p{
+    margin-left: 20px;
+  }
+}
+
+.index_image_area{
+  margin: auto;
+  text-align: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
