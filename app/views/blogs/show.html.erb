@@ -14,8 +14,10 @@
       <% else %>
         <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
       <% end %>
-      <% else %>
-    <%= link_to '編集する',edit_blog_path(@blog.id) %>
+    <% else %>
+      <%= link_to '編集する', edit_blog_path(@blog.id) %>
+      <%= link_to '削除する', blog_path(@blog.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか?'},
+                  class: "btn btn-danger" %>
     <% end %>
   </div>
   <div class="show_content">
