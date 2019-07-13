@@ -1,13 +1,4 @@
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "件のエラーがあります。") %></h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li class="errors_msg"><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+
 
 <div class="creat_user_form">
   <%= form_with(model:@user,local: true) do |f| %>
@@ -27,6 +18,18 @@
    <div class="input_re_password">
      <%= f.password_field :password_confirmation,placeholder: "パスワードを再入力",size: 30 %>
     </div>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <strong><%= pluralize(@user.errors.count, "件のエラーがあります。") %></strong>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li class="errors_msg"><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
 
    <%= f.submit "アカウント登録" ,class: "creat_submit btn btn-success" %>
 

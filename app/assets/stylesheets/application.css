@@ -43,24 +43,23 @@ body {
   margin-top: 0;
 }
 
-
-ul {
+.top_ul {
   list-style: none;
 }
 
-li {
+.top_ul li {
   float: right;
   display: block;
   text-align: center;
   margin: 15px 15px;
 }
 
-.li_top {
+#li_top {
   float: left;
   margin-left: 15%;
 }
 
-.li_end {
+#li_end {
   margin-right: 15%;
 }
 
@@ -71,10 +70,23 @@ li {
   clear: both;
 }
 
-footer{
+footer {
   position: absolute;
   width: 100%;
   text-align: center;
   height: 50px;
   bottom: 0px;
+}
+
+#error_explanation {
+  color: red;
+}
+
+.errors_msg {
+  text-align: left;
+}
+
+.notice {
+  font-size: 3rem;
+  text-align: center;
 }
