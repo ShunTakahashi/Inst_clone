@@ -14,7 +14,7 @@
        <!-- TOP画像は公式よりDL -->
         <li id="li_top"><%= link_to image_tag('top.png',size: '40x40'), blogs_path %></li>
         <li id="li_end"><%= link_to image_tag('user.png',size: '40x40'), user_path(current_user.id) %></li>
-        <li><%= link_to image_tag('favo.jpeg',size: '40x40'),favorites_path %></li>
+        <li><%= link_to image_tag('favo.jpeg',size: '40x40'),favo_page_user_path(current_user.id) %></li>
         <li><%= link_to image_tag('blog.jpeg',size: '40x40'),new_blog_path %></li>
       </ul>
     </header>

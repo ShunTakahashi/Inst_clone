@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @blogs = Blog.all.order(id: "DESC")
   end
 
   def edit
@@ -28,18 +27,26 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to users_path,notice: "編集が完了しました"
+      redirect_to users_path, notice: "編集が完了しました"
     else
       render 'edit'
     end
   end
 
+  def favo_page
+    @user = User.find(params[:id])
+    @favorites = current_user.favorite_users.all
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name,:email,
+    params.require(:user).permit(:name, :email,
                                  :password,
                                  :password_confirmation,
-                                 :profile)
+                                 :profile,
+                                 :image, :image_cache)
   end
+
+
 end
