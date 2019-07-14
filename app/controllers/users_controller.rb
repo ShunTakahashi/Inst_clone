@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   def favo_page
     @user = User.find(params[:id])
-    @favorites = current_user.favorite_users.all
+    @favorites = current_user.favorite_blogs.all
   end
 
   private

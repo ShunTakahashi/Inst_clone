@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/user/facorite" => "users#favorite"
+  get "/" => "users#index"
   resources :users do
     member do
       get :favo_page
