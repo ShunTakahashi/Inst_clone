@@ -9,7 +9,7 @@
   </div>
   <div class="show_content">
     <strong><%= @blog.user.name %></strong>
-    <%= @blog.content %>
+    <%= simple_format(@blog.content) %>
   </div>
   <div class="favorite">
     <% unless @blog.user_id == current_user.id %>

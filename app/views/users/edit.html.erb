@@ -1,22 +1,32 @@
-<%= form_with(model: @user ,url: edit ,local: true) do |form| %>
+<%= form_with(model: @user, local: true) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= @user.errors.count %>件のエラーがあります。</h2>
       <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
+  <div class="user_edit">
+    <table class="user_edit_table">
+      <tr>
+        <th><%= f.label :name %></th>
+        <td><%= f.text_field :name ,size: 30 %></td>
+      </tr>
 
-  <%= image_tag(@blog.image.url) if @blog.image.url %>
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.text_area :content ,placeholder: "投稿する内容" ,id: "textarea" %>
+      <tr>
+      <th><%= f.label :profile %></th>
+      <td><%= f.text_area :profile , size: "29x4" ,id: "textarea" %></td>
+      </tr>
 
-
-  <br>
-  <%= form.submit "投稿する" ,class: "btn btn-primary" %>
+      <tr>
+      <th><%= f.label :image %></th>
+      <td><%= f.file_field :image %></td>
+      </tr>
+    </table>
+    <%= f.submit "送信する" %>
+  </div>
 <% end %>

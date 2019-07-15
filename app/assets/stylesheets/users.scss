@@ -67,16 +67,6 @@
   }
 }
 
-.user_show_ul {
-  padding-left: 0;
-  list-style: none;
-  .show_li {
-    margin: 10px;
-    float: left;
-  }
-}
-
-
 .my_index_image_area{
   margin: auto;
   padding-top: 25px;
@@ -85,4 +75,11 @@
   width: 600px;
   display: flex;
   align-items: center;
+}
+
+.user_profile{
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
+  width: 310px;
 }
