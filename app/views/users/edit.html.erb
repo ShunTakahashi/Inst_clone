@@ -1,1 +1,22 @@
-工事中です
+<%= form_with(model: @user ,url: edit ,local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= image_tag(@blog.image.url) if @blog.image.url %>
+  <%= form.file_field :image %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.text_area :content ,placeholder: "投稿する内容" ,id: "textarea" %>
+
+
+  <br>
+  <%= form.submit "投稿する" ,class: "btn btn-primary" %>
+<% end %>
