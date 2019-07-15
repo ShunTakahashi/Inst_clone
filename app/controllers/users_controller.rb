@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @blogs = current_user.blogs.all.order(id: "DESC")
   end
 
   def edit

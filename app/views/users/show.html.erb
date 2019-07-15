@@ -1,13 +1,25 @@
-<div class="user_show clearfix">
-  <p><%= @user.name %></p>
-  <%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
-  <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-  <ul class="user_show_ul">
-    <li>"投稿数"</li>
-    <li>"ファボ数"</li>
-    <li>"フォロー"</li>
-  </ul>
-  <div class="user_profile">  <!-- そのうちやるやつ -->
-    <%= @user.profile %>
+<div class="user_show">
+  <div class="user_data clearfix">
+    <p><%= @user.name %></p>
+    <%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
+    <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+    <ul class="user_show_ul">
+      <li class="show_li crearfix">"投稿数"</li>
+      <li class="show_li crearfix">"ファボ数"</li>
+      <li class="show_li crearfix">"フォロー"</li>
+    </ul>
+    <div class="user_profile">  <!-- そのうちやるやつ -->
+      <%= @user.profile %>
+    </div>
   </div>
+  <div>
+    <% @blogs.each do |blog| %>
+      <div class="my_index_image_area">
+        <%= link_to blog_path(blog) do %>
+          <%= image_tag blog.image.url %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
