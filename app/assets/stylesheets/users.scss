@@ -30,10 +30,6 @@
   float: right;
 }
 
-.user_edit_table {
-
-}
-
 .favo_page_h1{
   text-align: center;
 }
@@ -82,4 +78,17 @@
   white-space: normal;
   display: block;
   width: 310px;
+}
+
+.user_edit_table{
+  margin-right: auto;
+  margin-left: auto;
+  th,td{
+    width: 80px;
+    padding-bottom: 30px;
+  }
+}
+
+.form_buttom{
+  text-align: center;
 }

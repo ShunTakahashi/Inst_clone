@@ -14,19 +14,23 @@
     <table class="user_edit_table">
       <tr>
         <th><%= f.label :name %></th>
-        <td><%= f.text_field :name ,size: 30 %></td>
+        <td><%= f.text_field :name, size: 30 %></td>
       </tr>
 
       <tr>
-      <th><%= f.label :profile %></th>
-      <td><%= f.text_area :profile , size: "29x4" ,id: "textarea" %></td>
+        <th><%= f.label :profile %></th>
+        <td><%= f.text_area :profile, size: "29x4", id: "textarea" %></td>
       </tr>
 
       <tr>
-      <th><%= f.label :image %></th>
-      <td><%= f.file_field :image %></td>
+        <th><%= f.label :image %></th>
+        <td><%= f.file_field :user_image %></td>
+        <%= f.hidden_field :user_image_cache %>
       </tr>
     </table>
-    <%= f.submit "送信する" %>
+
+    <div class="form_buttom">
+      <%= f.submit "送信する" %>
+    </div>
   </div>
 <% end %>

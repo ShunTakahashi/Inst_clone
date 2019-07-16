@@ -1,9 +1,12 @@
 <div class="user_show">
+  <div class="user_image">
+    <%= image_tag(@user.user_image.url) if @user.user_image.present? %>
+  </div>
   <div class="user_data clearfix">
     <p><%= @user.name %></p>
     <%= link_to 'プロフィールを編集', edit_user_path(@user.id) %>
     <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-    <div class="user_profile">  <!-- そのうちやるやつ -->
+    <div class="user_profile">
       <%= @user.profile %>
     </div>
   </div>
