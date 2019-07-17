@@ -13,5 +13,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
   mount_uploader :user_image, ImageUploader
+  attr_accessor :image_cache
 
 end

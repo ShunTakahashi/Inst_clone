@@ -1,18 +1,18 @@
 <div>
   <% @blogs.each do |blog| %>
     <div class="index_container">
-    <header class="index_header">
-      <p><%= blog.user.name %></p>
-    </header>
+      <header class="index_header">
+        <%= image_tag blog.user.user_image.url ,class: "index_icon" if blog.user.user_image.present?  %>
+        <%= blog.user.name %>
+      </header>
 
-    <body>
-      <div class="index_image_area">
-       <%= image_tag blog.image.url %>
-      </div>
-    </body>
-      <%= link_to '詳細', blog_path(blog.id),
-                                      class: "btn btn-primary" %>
-    </div>
-
-  <% end %>
+      <body>
+       <div class="index_image_area">
+        <%= link_to blog_path(blog) do %>
+         <%= image_tag blog.image.url, class: "blog_image" %>
+        <% end %>
+        </div>
+       </body>
+     </div>
+   <% end %>
 </div>

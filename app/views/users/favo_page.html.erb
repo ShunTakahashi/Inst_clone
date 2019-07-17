@@ -4,7 +4,7 @@
   <% @favorites.each do |favo| %>
     <div class="favo_page_image_area">
       <%= link_to blog_path(favo) do %>
-        <%= image_tag favo.image.url %>
+        <%= image_tag favo.image.url ,class: "favo_image" %>
       <% end %>
     </div>
   <% end %>

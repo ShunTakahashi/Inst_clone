@@ -34,28 +34,38 @@
   text-align: center;
 }
 
+.favo_page{
+  display: inline;
+}
+
 
 .favo_page_image_area {
-  margin: auto;
+  margin-right: auto;
+  margin-left: 40px;
   padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
   width: 600px;
-  display: flex;
-  align-items: center;
+  display: inline;
+}
+
+.favo_image{
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  padding: 10px;
 }
 
 .user_show {
   min-height: 100%;
-  display: block;
+  display: inline;
 }
 
 
 .user_data{
   margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 50%;
+  margin-right: 20%;
+  float: right;
   text-align: left;
   flex-grow: 2;
   p {
@@ -64,13 +74,13 @@
 }
 
 .my_index_image_area{
-  margin: auto;
+  margin-right: auto;
+  margin-left: 40px;
   padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
   width: 600px;
-  display: flex;
-  align-items: center;
+  display: inline;
 }
 
 .user_profile{
@@ -91,4 +101,32 @@
 
 .form_buttom{
   text-align: center;
+}
+
+.avater{
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.myblog_image{
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.user_image{
+  float: left;
+  margin-left: 20%;
+  margin-top: 60px;
+}
+
+.user_date_show{
+  margin-left: 50px;
+}
+
+
+.user_area{
+  min-height: 300px;
 }

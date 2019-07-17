@@ -7,7 +7,7 @@
 
   <h2>投稿内容</h2>
   <p><%= @blog.content %></p>
-  <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+  <%= image_tag @blog.image.url,class: "blog_image" %>
   <br>
   <%= form.submit  "投稿する。" , class: "submit btn btn-success" %>
 <% end %>

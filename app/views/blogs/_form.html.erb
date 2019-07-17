@@ -11,7 +11,7 @@
   <% end %>
 
 
-  <%= image_tag(@blog.image.url) if @blog.image.url %>
+  <%= image_tag(@blog.image.url,class: "blog_image") if @blog.image.url %>
   <%= form.file_field :image %>
   <%= form.hidden_field :image_cache %>
   <%= form.text_area :content ,placeholder: "投稿する内容" ,id: "textarea" %>

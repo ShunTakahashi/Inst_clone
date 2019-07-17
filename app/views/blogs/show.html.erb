@@ -1,11 +1,12 @@
 <div class="index_container">
   <header class="index_header">
-    <p><%= @blog.user.name %></p>
+    <%= image_tag @blog.user.user_image.url ,class: "index_icon" if @blog.user.user_image.present?  %>
+    <%= @blog.user.name %>
   </header>
 
   <body>
   <div class="index_image_area">
-    <%= image_tag @blog.image.url %>
+    <%= image_tag @blog.image.url , class: "blog_image" %>
   </div>
   <div class="show_content">
     <strong><%= @blog.user.name %></strong>
@@ -14,14 +15,13 @@
   <div class="favorite">
     <% unless @blog.user_id == current_user.id %>
       <% if @favorite.present? %>
-        <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+        <%= link_to 'いいね！を解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
       <% else %>
-        <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+        <%= link_to 'いいね！をする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
       <% end %>
     <% else %>
       <%= link_to '編集する', edit_blog_path(@blog.id) %>
-      <%= link_to '削除する', blog_path(@blog.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか?'},
-                  class: "btn btn-danger" %>
+      <%= link_to '削除する', blog_path(@blog.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか?'}%>
     <% end %>
   </div>
   </body>

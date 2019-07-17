@@ -7,6 +7,7 @@
 
 .index_header{
   border-bottom: 0.1rem solid grey;
+  width: 600px;
   height: 60px;
   font-size: 2rem;
   text-align: left;
@@ -29,4 +30,16 @@
   font-size: 1.5rem;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.blog_image{
+  width: 600px;
+  height: 600px;
+  object-fit: contain;
+}
+
+.index_icon{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
