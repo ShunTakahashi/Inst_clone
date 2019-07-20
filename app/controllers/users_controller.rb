@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :check_user_user, only: [:edit, :update]
+  before_action :check_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -53,8 +53,10 @@ class UsersController < ApplicationController
   end
 
   def check_user
-    if current_user.id != params[:id]
-      redirect_to new_session_path
+    @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      flash[:notice] = "編集権限がありません"
+      redirect_to blogs_path
     end
   end
 

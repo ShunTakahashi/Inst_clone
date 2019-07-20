@@ -59,7 +59,8 @@ class BlogsController < ApplicationController
   end
 
   def authenticate_user
-    unless current_user.id != @blog.user.id
+    @blog = Blog.find(params[:id])
+    unless current_user.id == @blog.user.id
       flash[:notice] = "編集、削除の権限はありません"
       redirect_to blogs_path
     end
