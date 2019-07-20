@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :check_user_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -47,6 +50,12 @@ class UsersController < ApplicationController
                                  :password_confirmation,
                                  :profile,
                                  :user_image, :user_image_cache)
+  end
+
+  def check_user
+    if current_user.id != params[:id]
+      redirect_to new_session_path
+    end
   end
 
 

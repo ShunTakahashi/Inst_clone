@@ -3,7 +3,7 @@
     <div class="index_container">
       <header class="index_header">
         <%= image_tag blog.user.user_image.url ,class: "index_icon" if blog.user.user_image.present?  %>
-        <%= blog.user.name %>
+        <%= link_to "#{blog.user.name}", user_path(blog.user.id) %>
       </header>
 
       <body>

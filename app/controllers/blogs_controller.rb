@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :set_blog,only:[:edit,:update,:show,:destroy]
+  before_action :authenticate_user, only: [:edit, :update, :destroy]
 
   def index
     @blogs = Blog.all.order(id: "DESC")
@@ -55,6 +56,13 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def authenticate_user
+    unless current_user.id != @blog.user.id
+      flash[:notice] = "編集、削除の権限はありません"
+      redirect_to blogs_path
+    end
   end
 
 end
