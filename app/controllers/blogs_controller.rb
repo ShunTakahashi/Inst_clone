@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
     if @blog.save
       redirect_to blogs_path,notice:"投稿が完了しました。"
     else
-      render show_users_path
+      render new_blog_path
     end
   end
 
