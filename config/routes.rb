@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
+
   get "/" => "users#index"
   resources :users do
     member do
