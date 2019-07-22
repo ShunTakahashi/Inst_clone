@@ -1,5 +1,5 @@
 # Inst_clone
-Instagram(https://www.instagram.com/)を模倣したクローンアプリ。
+Instagram URL:https://www.instagram.com/ を模倣したクローンアプリ。
 
 * ユーザーのプロフィール編集機能
 
