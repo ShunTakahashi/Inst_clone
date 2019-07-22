@@ -1,4 +1,4 @@
-<%= form_with(model: @blog ,url: choose_new_or_edit ,local: true) do |form| %>
+<%= form_with(model: @blog, url: choose_new_or_edit, local: true) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
@@ -10,17 +10,14 @@
     </div>
   <% end %>
 
-<div class="form">
-  <%= image_tag(@blog.image.url,class: "blog_image") if @blog.image.url %>
-  <%= form.file_field :image ,class: "submit_image"%>
-  <%= form.hidden_field :image_cache %>
+  <div class="form">
+    <img id="blog_img_prev" src="#" class='hidden'/>
+    <%= image_tag(@blog.image.url, class: "blog_image") if @blog.image.url %>
+    <%= form.file_field :image, class: "submit_image", id: "post_img" %>
+    <%= form.hidden_field :image_cache %>
+    <br>
+    <%= form.text_area :content, placeholder: "投稿する内容", id: "textarea", size: '30x3' %>
+  </div>
   <br>
-  <%= form.text_area :content ,placeholder: "投稿する内容" ,id: "textarea", size: '30x3'%>
-</div>
-
-  <br>
-  <%= form.submit "投稿する" ,class: "btn btn-primary" %>
+  <%= form.submit "投稿する", class: "btn btn-primary" %>
 <% end %>
-
-
-<!-- アップロード時にプレビュー機能をあとでつける -->
