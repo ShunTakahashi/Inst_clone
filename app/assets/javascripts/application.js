@@ -29,42 +29,23 @@ $(function() {
 
 
 
-
 $( document ).on('turbolinks:load', function() {
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        $('#blog_img_prev').attr('src', e.target.result);
+        $('#img_prev').attr('src', e.target.result);
       }
+
       reader.readAsDataURL(input.files[0]);
     }
   }
+
 
   $("#post_img").change(function(){
-    $('#blog_img_prev').removeClass('hidden');
-    $('.blog_image').remove();
-    readURL(this);
-  });
-});
-
-
-$( document ).on('turbolinks:load', function() {
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        $('#user_img_prev').attr('src', e.target.result);
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-
-  $("#avater_post_img").change(function(){
-    $('#user_img_prev').removeClass('hidden');
-    $('.avater').remove();
+    $('#img_prev').removeClass('hidden');
+    $('.rm_img').remove();
     readURL(this);
   });
 });

@@ -25,9 +25,9 @@
       <tr>
         <th><%= f.label :image %></th>
         <td>
-          <img id="user_img_prev" src="#" class='hidden'/>
-          <%= image_tag(@user.user_image.url, class: "avater") if @user.user_image.url %>
-          <%= f.file_field :user_image , id: "avater_post_img"%>
+          <img id="img_prev" src="#" class='hidden user_img_prev' />
+          <%= image_tag(@user.user_image.url, class: "avater rm_img") if @user.user_image.url %>
+          <%= f.file_field :user_image , id: "post_img"%>
         </td>
         <%= f.hidden_field :user_image_cache %>
 

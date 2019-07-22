@@ -11,8 +11,8 @@
   <% end %>
 
   <div class="form">
-    <img id="blog_img_prev" src="#" class='hidden'/>
-    <%= image_tag(@blog.image.url, class: "blog_image") if @blog.image.url %>
+    <img id="img_prev" src="#" class='hidden blog_img_prev' />
+    <%= image_tag(@blog.image.url, class: "blog_image　rm_img") if @blog.image.url %>
     <%= form.file_field :image, class: "submit_image", id: "post_img" %>
     <%= form.hidden_field :image_cache %>
     <br>
